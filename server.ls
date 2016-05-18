@@ -1,14 +1,17 @@
-require! express
+require! {
+	express
+	\./config : {serverPort, distDir}
+}
 
 
-port = process.env.PORT or 8000
+port = process.env.PORT or serverPort
 app = express!
 
 options = do
-	root: \app/dist
+	root: distDir
 
 app
-	..use express.static __dirname + \/app/dist/
+	..use express.static __dirname + distDir
 
 	..get \/:file, (req, res) ->
 		res.sendFile req.params.file + ".html", options

@@ -6,11 +6,8 @@ require! {
 	\gulp-notify : notify
 	\gulp-jade : jade
 	\gulp-plumber : plumber
+	\./config : {distDir, sourceDir}
 }
-
-
-distDir = "app/dist"
-sourceDir = "app/src"
 
 
 notifyOnError = ->
@@ -45,5 +42,5 @@ gulp
 	..task \default, !->
 		livereload.listen!
 		gulp
-			..watch \app/src/**/*.jade, <[compile-jade]>
-			..watch \app/src/**/*.styl, <[compile-stylus]>
+			..watch sourceDir + \/**/*.jade, <[compile-jade]>
+			..watch sourceDir + \/**/*.styl, <[compile-stylus]>
