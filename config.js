@@ -5,4 +5,8 @@ serverPort = 8000
 
 
 
-module.exports = {sourceDir, distDir, serverPort}
+module.exports = {
+  sourceDir: sourceDir,
+  distDir: distDir,
+  serverPort: serverPort
+}
