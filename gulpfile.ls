@@ -9,7 +9,7 @@ require! {
 }
 
 
-destDir = "app/dist"
+distDir = "app/dist"
 sourceDir = "app/src"
 
 
@@ -24,7 +24,7 @@ gulp
 			.pipe plumber do
 				errorHandler: notifyOnError
 			.pipe jade!
-			.pipe gulp.dest destDir
+			.pipe gulp.dest distDir
 			.pipe livereload!
 
 
@@ -38,7 +38,7 @@ gulp
 				browsers: ["last 2 versions"]
 				-cascade
 			}
-			.pipe gulp.dest "#destDir/css"
+			.pipe gulp.dest "#distDir/css"
 			.pipe livereload!
 
 
